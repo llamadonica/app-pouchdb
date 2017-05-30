@@ -30,7 +30,7 @@ For more information on PouchDB synchronization topics, please refer to the
 documentation [here](https://pouchdb.com/guides/replication.html).
 -->
 <script>
-  (function() {
+  define(['../pouchdb/dist/pouchdb.js'], function(PouchDB) {
     'use strict';
 
     Polymer({
@@ -116,5 +116,5 @@ documentation [here](https://pouchdb.com/guides/replication.html).
         console.error(error);
       }
     });
-  })();
+  });
 </script>

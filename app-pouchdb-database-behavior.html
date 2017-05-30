@@ -8,9 +8,10 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../imd/imd.html">
 <link rel="import" href="pouchdb.html">
 <script>
-  (function() {
+  define(['../pouchdb/dist/pouchdb.js', 'module'], function(PouchDB, module) {
     'use strict';
 
     /**
@@ -23,7 +24,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
      *
      * @polymerBehavior Polymer.AppPouchDBDatabaseBehavior
      */
-    Polymer.AppPouchDBDatabaseBehavior = {
+    module.exports = {
       properties: {
         /**
          * The PouchDB adapter to use. For more information on PouchDB adapters,
@@ -251,5 +252,5 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         return new PouchDB(name, options);
       }
     };
-  })();
+  });
 </script>

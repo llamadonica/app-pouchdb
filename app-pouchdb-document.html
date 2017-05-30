@@ -51,7 +51,7 @@ PouchDB document:
 ```
 -->
 <script>
-  (function() {
+  define(['app-pouchdb-database-behavior.html'], function(AppPouchDBDatabaseBehavior) {
     'use strict';
 
     Polymer({
@@ -59,7 +59,7 @@ PouchDB document:
 
       behaviors: [
         Polymer.AppStorageBehavior,
-        Polymer.AppPouchDBDatabaseBehavior
+        AppPouchDBDatabaseBehavior
       ],
 
       properties: {
@@ -201,5 +201,5 @@ PouchDB document:
         }.bind(this));
       }
     });
-  })();
+  });
 </script>

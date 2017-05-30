@@ -22,14 +22,14 @@ Note: at least one index must be created in order for `app-pouchdb-query` to
 work.
 -->
 <script>
-  (function() {
+  define(['app-pouchdb-database-behavior.html'], function(AppPouchDBDatabaseBehavior) {
     'use strict';
 
     Polymer({
       is: 'app-pouchdb-index',
 
       behaviors: [
-        Polymer.AppPouchDBDatabaseBehavior
+        AppPouchDBDatabaseBehavior
       ],
 
       properties: {
@@ -104,5 +104,5 @@ work.
         return index;
       }
     });
-  })();
+  });
 </script>
