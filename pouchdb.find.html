@@ -7,4 +7,12 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
-<script src="../pouchdb-find/dist/pouchdb.find.js"></script>
+<script src="../pouchdb/dist/pouchdb.find.js"></script>
+<script>
+  define(['../pouchdb/dist/pouchdb.find.js', '../pouchdb/dist/pouchdb.js','module'], function(PouchDB, PouchDBFindPlugin, module) {
+    PouchDB.plugin(PouchDBFindPlugin);
+    module.exports = PouchDB;
+  }
+</script>
+
+
