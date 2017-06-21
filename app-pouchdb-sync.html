@@ -30,7 +30,19 @@ For more information on PouchDB synchronization topics, please refer to the
 documentation [here](https://pouchdb.com/guides/replication.html).
 -->
 <script>
-  define(['../pouchdb/dist/pouchdb.js'], function(PouchDB) {
+(function (root, factory) {
+  if(typeof define === "function" && define.amd) {
+    define(["../pouchdb/dist/pouchdb.js"], factory);
+  } else {
+    if (!root.PouchDB) {
+      throw new Error("PouchDB was not found");
+    }
+    if (!root.Polymer) {
+      throw new Error("Polymer was not found");
+    }
+    factory(root.PouchDB);
+  }
+})(this, function(PouchDB) {
     'use strict';
 
     Polymer({

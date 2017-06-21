@@ -11,7 +11,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../imd/imd.html">
 <link rel="import" href="pouchdb.html">
 <script>
-  define(['../pouchdb/dist/pouchdb.js', 'module'], function(PouchDB, module) {
+(function (root, factory) {
+  if(typeof define === "function" && define.amd) {
+    define(["../pouchdb/dist/pouchdb.js", "module"], factory);
+  } else {
+    if (!root.PouchDB) {
+      throw new Error("PouchDB was not found");
+    }
+    if (!root.Polymer) {
+      throw new Error("Polymer was not found");
+    }
+    let moduleProxy = {exports: {}};
+    factory(root.PouchDB, moduleProxy);
+    root.Polymer.AppPouchDBDatabaseBehavior = moduleProxy.exports;
+  }
+})(this, function(PouchDB, module) {
     'use strict';
 
     /**

@@ -22,7 +22,16 @@ Note: at least one index must be created in order for `app-pouchdb-query` to
 work.
 -->
 <script>
-  define(['./app-pouchdb-database-behavior.html'], function(AppPouchDBDatabaseBehavior) {
+(function (root, factory) {
+  if(typeof define === "function" && define.amd) {
+    define(["./app-pouchdb-database-behavior.html"], factory);
+  } else {
+    if (!root.Polymer || !root.Polymer.AppPouchDBDatabaseBehavior) {
+      throw new Error("Polymer.AppPouchDBDatabaseBehavior was not found");
+    }
+    factory(root.Polymer.AppPouchDBDatabaseBehavior);
+  }
+})(this, function(AppPouchDBDatabaseBehavior) {
     'use strict';
 
     Polymer({
