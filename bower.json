@@ -20,8 +20,7 @@
   "dependencies": {
     "pouchdb": "^6.2.0",
     "polymer": "polymer/polymer#^2.0.0-rc.3",
-    "app-storage": "polymerelements/app-storage#2.0-preview",
-    "imd": "PolymerLabs/IMD#^1.0.0"
+    "app-storage": "polymerelements/app-storage#2.0-preview"
   },
   "devDependencies": {
     "iron-component-page": "polymerelements/iron-component-page#2.0-preview",
